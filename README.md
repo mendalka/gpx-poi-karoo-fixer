@@ -2,6 +2,13 @@
 
 A simple Python script to fix GPX files so that their custom POIs (waypoints) are successfully imported into the Hammerhead Karoo Dashboard.
 
+## Web GUI / Android & iOS App
+
+If you prefer a graphical user interface instead of a command-line script, a web application is available. It processes GPX files entirely in your web browser (locally and privately) and can be installed on Android and iOS/iPhone home screens for offline usage.
+
+* **Live Web App:** [https://mendalka.github.io/gpx-poi-karoo-app/](https://mendalka.github.io/gpx-poi-karoo-app/)
+* **App Repository:** [github.com/mendalka/gpx-poi-karoo-app](https://github.com/mendalka/gpx-poi-karoo-app)
+
 ## Why is this needed?
 
 Let's face it: it's June 2026, and for **six long years**, Hammerhead has been unable to import arbitrary POIs from GPX files without silently ignoring them. While they have recently made some minor progress with standardizing POIs, the Karoo Dashboard is still extremely picky. 
