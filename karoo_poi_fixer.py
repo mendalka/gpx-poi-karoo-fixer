@@ -27,7 +27,7 @@ SOFTWARE.
 ---
 Hammerhead Karoo GPX POI Format Notes:
 Karoo Dashboard only imports GPX waypoints if both <type> and <sym> tags are present and match
-one of the 8 supported POI types case-sensitively (Food, Parking, Camping, Lodging, Geocache, Summit, Generic, Danger).
+one of the 9 supported POI types case-sensitively (Food, Water, Parking, Camping, Lodging, Geocache, Summit, Generic, Danger).
 Any unrecognized types or missing <sym> tags will cause the waypoints to be stripped during import.
 """
 
@@ -53,7 +53,7 @@ mapping = {
     "fuel_station": "Generic",
     "food": "Food",
     "coffee": "Food",
-    "water": "Food",
+    "water": "Water",
     "information": "Generic",
     "toilet": "Generic",
     "first_aid": "Generic",
@@ -67,18 +67,24 @@ mapping = {
     "bakery": "Food",
     "café": "Food",
     "cafe": "Food",
-    "cemetery (drinking water)": "Food",
+    "cemetery (drinking water)": "Water",
     "convenience store": "Food",
-    "drinking water": "Food",
+    "drinking water": "Water",
+    "drinking_water": "Water",
     "fast food": "Food",
+    "fountain": "Water",
     "gas station": "Generic",
     "ice cream parlor": "Food",
     "kiosk": "Generic",
     "other": "Generic",
     "restaurant": "Food",
+    "spring": "Water",
     "supermarket": "Food",
     "toilets": "Generic",
-    "vending machine": "Food"
+    "vending machine": "Food",
+    "water intake point": "Water",
+    "water point": "Water",
+    "woda": "Water"
 }
 
 def process_gpx(gpx_content):

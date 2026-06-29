@@ -13,8 +13,9 @@ If you prefer a graphical user interface instead of a command-line script, a web
 
 Let's face it: it's June 2026, and for **six long years**, Hammerhead has been unable to import arbitrary POIs from GPX files without silently ignoring them. While they have recently made some minor progress with standardizing POIs, the Karoo Dashboard is still extremely picky. 
 
-To import a waypoint as a POI, the Karoo Dashboard requires **both** the `<type>` and `<sym>` tags to be present in each `<wpt>` block and match one of their **8 supported case-sensitive POI types** exactly:
+To import a waypoint as a POI, the Karoo Dashboard requires **both** the `<type>` and `<sym>` tags to be present in each `<wpt>` block and match one of their **9 supported case-sensitive POI types** exactly:
 * `Food`
+* `Water`
 * `Parking`
 * `Camping`
 * `Lodging`
@@ -29,8 +30,9 @@ This script parses your GPX file, maps common or custom POI types (including exp
 
 ## Supported Mappings
 
-The script maps various common waypoint types to the 8 supported Karoo POIs:
-* **Food**: `Food`, `Coffee`, `Water`, `Grocery Store`, `Supermarket`, `Convenience Store`, `Bakery`, `Café`, `Restaurant`, `Fast Food`, `Ice Cream Parlor`, `Drinking Water`, `Cemetery (Drinking Water)`, `Vending Machine`
+The script maps various common waypoint types to the 9 supported Karoo POIs:
+* **Food**: `Food`, `Coffee`, `Grocery Store`, `Supermarket`, `Convenience Store`, `Bakery`, `Café`, `Restaurant`, `Fast Food`, `Ice Cream Parlor`, `Vending Machine`
+* **Water**: `Water`, `Woda`, `Drinking Water`, `Water Point`, `Water Intake Point`, `Fountain`, `Spring`, `Cemetery (Drinking Water)`
 * **Camping**: `Campsite`
 * **Lodging**: `Shelter`, `Lodging`
 * **Summit**: `Summit`
