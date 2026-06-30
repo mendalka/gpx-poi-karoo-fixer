@@ -84,7 +84,34 @@ mapping = {
     "vending machine": "Food",
     "water intake point": "Water",
     "water point": "Water",
-    "woda": "Water"
+    "woda": "Water",
+
+    # Additional types (Komoot, RideWithGPS, etc.)
+    "aid station": "Food",
+    "art": "Generic",
+    "beach": "Generic",
+    "bike shop": "Generic",
+    "bridge": "Generic",
+    "checkpoint": "Generic",
+    "crossing": "Generic",
+    "first aid": "Generic",
+    "gear": "Generic",
+    "info": "Generic",
+    "meeting point": "Generic",
+    "obstacle": "Danger",
+    "park": "Generic",
+    "pub": "Food",
+    "rest area": "Generic",
+    "segment end": "Generic",
+    "segment start": "Generic",
+    "service": "Generic",
+    "sharp curve": "Danger",
+    "shower": "Water",
+    "steep incline": "Danger",
+    "transition": "Generic",
+    "transport": "Generic",
+    "tunnel": "Generic",
+    "valley": "Generic"
 }
 
 def process_gpx(gpx_content):
@@ -97,6 +124,12 @@ def process_gpx(gpx_content):
             original_type = type_match.group(2)
             normalized_type = original_type.strip().lower()
             mapped_type = mapping.get(normalized_type, "Generic")
+            
+            # If type changed, preserve original type in <name> and <desc>
+            if original_type.strip().lower() != mapped_type.lower():
+                suffix = f" ({original_type.strip()})"
+                wpt_block = re.sub(r"(<name>)(.*?)(</name>)", lambda m: f"{m.group(1)}{m.group(2)}{suffix}{m.group(3)}", wpt_block)
+                wpt_block = re.sub(r"(<desc>)(.*?)(</desc>)", lambda m: f"{m.group(1)}{m.group(2)}{suffix}{m.group(3)}", wpt_block)
             
             # Replace type tag
             wpt_block = re.sub(r"<type>.*?</type>", f"<type>{mapped_type}</type>", wpt_block)
